@@ -1,0 +1,173 @@
+students = {}
+log = False
+roll = -1
+
+
+def Details(name, email, contact, jee, branch):
+    global students
+    students[str(len(students) + 1)] = {
+        "name": name,
+        "email": email,
+        "contact": contact,
+        "jee": jee,
+        "branch": branch,
+    }
+
+
+def registration():
+    name = input("Enter your Name: ").strip()
+    email = input("Enter your email address: ").strip()
+    while "@gmail.com" not in email:
+        email = input("Enter a valid email address: ").strip()
+
+    contact = input("Enter your contact number: ").strip()
+    while len(contact) != 10 or not contact.isdigit():
+        contact = input("Enter a valid 10-digit contact number: ").strip()
+
+    try:
+        jee = float(input("Enter your JEE score: ").strip())
+    except ValueError:
+        print("Invalid JEE score. Setting to 0.0")
+        jee = 0.0
+
+    branch = input("Enter the Branch Name you want: ").strip()
+    Details(name, email, contact, jee, branch)
+    print("Your registration is done.")
+
+
+def profile(roll_id, info):
+    print("\n--- Student Profile ---")
+    print(f"Roll No: {roll_id}")
+    print(f"Name   : {info.get('name')}")
+    print(f"Email  : {info.get('email')}")
+    print(f"Contact: {info.get('contact')}")
+    print(f"Branch : {info.get('branch')}")
+    print(f"JEE    : {info.get('jee')}")
+
+
+def update(info):
+    print("\n--- Update Profile ---")
+    print("Leave blank to keep current value.")
+
+    new_contact = input(f"Enter new contact ({info.get('contact')}): ").strip()
+    if new_contact:
+        if len(new_contact) == 10 and new_contact.isdigit():
+            info["contact"] = new_contact
+        else:
+            print("Invalid contact. Keeping old value.")
+
+    new_branch = input(f"Enter new branch ({info.get('branch')}): ").strip()
+    if new_branch:
+        info["branch"] = new_branch
+
+    new_jee = input(f"Enter new JEE score ({info.get('jee')}): ").strip()
+    if new_jee:
+        try:
+            info["jee"] = float(new_jee)
+        except ValueError:
+            print("Invalid JEE score. Keeping old value.")
+
+    print("Profile updated successfully.")
+
+
+def Login():
+    global log, roll
+    name = input("Enter your name: ").strip()
+    email = input("Enter your email: ").strip()
+    while "@gmail.com" not in email:
+        email = input("Enter a valid email address: ").strip()
+
+    for student_id, info in students.items():
+        if (
+            info.get("name", "").lower() == name.lower()
+            and info.get("email", "").lower() == email.lower()
+        ):
+            log = True
+            roll = student_id
+            print("Login successful.")
+            profile(roll, info)
+            return info
+
+    print("No matching student found. Please register or check your details.")
+    log = False
+    roll = -1
+    return None
+
+
+def view_all_students():
+    if not students:
+        print("No students registered yet.")
+        return
+
+    print("\n--- All Registered Students ---")
+    for sid, info in students.items():
+        print(f"\nRoll: {sid}")
+        for k, v in info.items():
+            print(f" {k}: {v}")
+
+
+def main():
+    global log, roll
+    while True:
+        try:
+            choice = int(
+                input(
+                    "\nChoose option:\n"
+                    "1. Registration\n"
+                    "2. Login\n"
+                    "3. Profile\n"
+                    "4. Update profile\n"
+                    "5. View all students\n"
+                    "6. Logout\n"
+                    "7. Exit\n"
+                    "Select option (1-7): "
+                ).strip()
+            )
+        except ValueError:
+            print("Please enter a number between 1 and 7.")
+            continue
+
+        if choice == 1:
+            registration()
+
+        elif choice == 2:
+            Login()
+
+        elif choice == 3:
+            if log and roll != -1:
+                info = students.get(roll)
+                if info:
+                    profile(roll, info)
+                else:
+                    print("Profile not found.")
+            else:
+                print("Please login first.")
+
+        elif choice == 4:
+            if log and roll != -1:
+                info = students.get(roll)
+                if info:
+                    update(info)
+                else:
+                    print("Profile not found.")
+            else:
+                print("Please login first.")
+
+        elif choice == 5:
+            view_all_students()
+
+        elif choice == 6:
+            log = False
+            roll = -1
+            print("Logged out successfully.")
+
+        elif choice == 7:
+            print("Exiting...")
+            break
+
+        else:
+            print("Invalid option. Please choose between 1 and 7.")
+
+
+
+main()
