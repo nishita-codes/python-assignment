@@ -1,0 +1,1168 @@
+Name:Nishita Patidar
+Enrollment :0103CS231266
+Batch:6
+Timing:12:10
+Basic if-Else problems
+1. Write a program to check whether a number is positive, negative, or zero.
+X=float(input("Enter a number: "))
+If x>0:
+     Print("Positive")
+elif x<0:
+    Print("Negative")
+else:
+    Print(“number is Zero.”)
+2. Write a program to check whether a number is even or odd.
+x=int(input("Enter a number"))
+if x%2==0:
+    print("Even")
+else:
+    print("odd")
+3. Write a program to check if a given year is a leap year or not.
+year = int(input("Enter a year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print( " Leap Year")
+else:
+    print( " Not a Leap Year")
+4. Write a program to find the greatest of two numbers.
+x=float(input("Enter a number"))
+y=float(input("Enter a number"))
+if x>y:
+  print ("x is greatest")
+else:
+  print("y is greatest")
+5. Write a program to check whether a person is eligible to vote (age >= 18).
+x=int(input("Enter a number"))
+if x>=18:
+  print("yes eligible")
+else:
+  print("not eligible")
+6. Write a program to check whether a given character is a vowel or consonant. p=(input("Enter a character"))
+if p.lower() in ['a', 'e', 'i', 'o', 'u']:
+    print("Vowel")
+else:
+    print("Consonant")
+7.write a program to check if a number is divisible by 5.
+x=int(input("Enter a number"))
+if x%5==0:
+  print("yes")
+else:
+  print("not divisibe by 5")
+8. Write a program to determine whether a given number is a single-digit, two-digit, or more than two-digit  number.
+num = int(input("Enter a number: "))
+if -9 <= num <= 9:
+    print("Single-digit number")
+elif -99 <= num <= 99:
+    print("Two-digit number")
+else:
+    print("More than two-digit number")
+9.  Write a program to check whether a student has passed or failed (passing marks = 40).
+marks = float(input("Enter the student's marks: "))
+    if marks >= 40:
+        print(" Pass")
+    else:
+        print(" Fail")
+10. Write a program to find whether the entered number is a multiple of both 3 and 7.
+x=int(input("Enter a number"))
+if x%3==0 and x%7==0:
+  print("yes")
+else:
+  print("No")
+
+Ladder If & Nested If:
+1.  Write a program to find the greatest among three numbers.
+x=int(input("enter first number"))
+y=int(input("enter second number"))
+z=int(input("enter third number"))
+if x>y and x>z:
+  print("x is greatest")
+elif(y>x and y>z):
+  print("y is greatest")
+else:
+  print("z is greatest")
+2.  Write a program to classify a person based on age: Child (<13), Teenager (13-19), Adult (20-59), Senior (60+).
+age=int(input("Enter age"))
+if age<13:
+  print("child")
+elif age>=13 and age<=19:
+  print("Teenager")
+elif age>19 and age<60:
+  print("Adult")
+else:
+  print("Senior")
+3. Write a program to assign grades based on marks: 
+90-100: A,  
+75-89: B,  
+
+
+50-74: C,  35-49: D,  <35: Fail.
+marks=int(input("enter the number"))
+ if marks>=90:
+  Print("A")
+elif marks>=75 and marks<90:
+  print("B")
+elif marks>=50 and marks<75:
+  print("C")
+elif marks>=35 and marks<50:
+  print("D")
+else:
+  print("fail")
+4. Write a program to check the type of triangle (equilateral, isosceles, or scalene) based on sides. 
+side1 = float(input("Enter the length of the first side: "))
+side2 = float(input("Enter the length of the second side: "))
+side3 = float(input("Enter the length of the third side: "))
+
+if side1 == side2 and side2 == side3:
+    print("Equilateral triangle.")
+elif side1 == side2 or side1 == side3 or side2 == side3:
+    print("Isosceles triangle.")
+else:
+    print("Scalene triangle.")    
+5. Write a program to check if a character is uppercase, lowercase, digit, or special symbol. 
+ch = input("Enter a character: ")
+
+if len(ch) != 1:
+    print("Please enter only one character!")
+else:
+    if ch.isupper():
+        print("Uppercase Letter")
+    elif ch.islower():
+        print("Lowercase Letter")
+    elif ch.isdigit():
+        print("Digit")
+    else:
+        print("Special Symbol")
+6. Write a program to calculate electricity bill based on units: 
+Up to 100 units: ₹5 per unit, 
+101–200 units: ₹7 per unit, 
+Above 200 units: ₹10 per unit. 
+
+units = int(input("Enter the number of units consumed: "))
+
+if units <= 100:
+    bill = units * 5
+elif units <= 200:
+    bill = (100 * 5) + (units - 100) * 7
+else:
+    bill = (100 * 5) + (100 * 7) + (units - 200) * 10
+
+print( bill)
+
+7. Write a program to determine the largest of four numbers using nested if.
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+d = int(input("Enter fourth number: "))
+
+if a > b:
+    if a > c:
+        if a > d:
+            largest = a
+        else:
+            largest = d
+    else:
+        if c > d:
+            largest = c
+        else:
+            largest = d
+else:
+    if b > c:
+        if b > d:
+            largest = b
+        else:
+            largest = d
+    else:
+        if c > d:
+            largest = c
+        else:
+            largest = d
+print(largest)
+
+8.  Write a program to check if a given year is a century year and also a leap year.
+
+year = int(input("Enter a year: "))
+if year % 100 == 0:
+    print("is a Century Year.")
+else:
+    print( "is NOT a Century Year.")
+
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print(year, "is a Leap Year.")
+else:
+    print( "is NOT a Leap Year.")
+9. Write a program to classify BMI value: Underweight (<18.5), Normal (18.5-24.9), Overweight (25-29.9),  Obese (30+).
+
+bmi = float(input("Enter your BMI value: "))
+
+if bmi < 18.5:
+    print( "Underweight")
+elif bmi >= 18.5 and bmi <= 24.9:
+    print(" Normal weight")
+elif bmi >= 25 and bmi <= 29.9:
+    print("Overweight")
+else:
+    print("Obese")
+10. Write a program to display the smallest number among three using nested if.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+if a < b:
+    if a < c:
+        smallest = a
+    else:
+        smallest = c
+else:
+    if b < c:
+        smallest = b
+    else:
+        smallest = c
+
+print( smallest)
+
+For Loop Problems:
+1. Write a program using a for loop to print all Armstrong numbers between 100 and 999. (Armstrong number:  sum of cubes of digits equals the number itself. Example: 153 => 1³+5³+3³ = 153).
+
+for x in range(100, 1000):
+    d1 = x // 100          # hundreds place
+    d2 = (x // 10) % 10    # tens place
+    d3 = x % 10            # ones place
+    sum_of_cubes = d1**3 + d2**3 + d3**3
+
+    if x == sum_of_cubes:
+        print(x)
+2.  Write a program to generate and display the first n prime numbers using a for loop.
+
+n = int(input("Enter how many prime numbers you want: "))
+
+count = 0        
+num = 2          
+
+print(f"The first {n} prime numbers are:")
+
+while count < n:   
+    is_prime = True
+    
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    
+    if is_prime:
+        print(num, end=" ")
+        count += 1
+    
+    num += 1
+3.  Write a program to display all numbers from 1 to 500 that are divisible by 3, but the sum of their digits  should not exceed 10.
+
+def digit_sum(n):
+    s = 0
+    while n > 0:
+        s += n % 10
+        n //= 10
+    return s
+
+for num in range(1, 501):
+    if num % 3 == 0:               
+        if digit_sum(num) <= 10:   
+            print(num, end=" ")
+4. Write a program using a for loop to print a pyramid of stars (*) of height n. Example for n=4:  * 
+ *** 
+***** 
+******* 
+
+n = int(input("Enter the height of the pyramid: "))
+
+for i in range(1, n + 1):
+    print(" " * (n - i), end="")
+    print("*" * (2 * i - 1))
+5. Write a program to accept a string and check whether it is a pangram (contains all 26 alphabets at least once)  using a for loop.
+
+
+s = input("Enter a string: ").lower()   
+alphabets = "abcdefghijklmnopqrstuvwxyz"
+found = True
+
+for ch in alphabets:
+    if ch not in s:
+        found = False
+        break
+
+if found:
+    print("The string is a pangram")
+else:
+    print(" The string is NOT a pangram")
+6.  Write a program using a for loop to print all twin primes between 1 and 100. (Twin primes: pairs of prime  numbers with a difference of 2, e.g., (3,5), (11,13)).
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+print("Twin primes between 1 and 100:")
+
+for i in range(2, 100):
+    if is_prime(i) and is_prime(i + 2):
+        print(f"({i}, {i+2})")
+7. Write a program that accepts a number from the user and prints whether it is a Harshad number (number  divisible by the sum of its digits) using a for loop.
+
+num = int(input("Enter a number: "))
+sum= 0
+for digit in str(num):     
+    sum+= int(digit)
+
+if num % sum == 0:
+    print(f"{num} is a Harshad number")
+else:
+    print(f"{num} is NOT a Harshad number")
+8. Write a program to generate Pascal’s Triangle up to n rows using a for loop.
+
+n = int(input("Enter number of rows: "))
+
+for i in range(n):  # loop over each row
+    print(" " * (n - i), end="")
+
+    value = 1
+    for j in range(i + 1):  # j goes from 0 to i
+        print(value, end=" ")
+        value = value * (i - j) // (j + 1)
+
+    print()
+9. Write a program using a for loop to display the sum of the series: 
+1² + 2² + 3² + ... + n² 
+
+n = int(input("Enter n: "))
+
+total = 0
+for i in range(1, n + 1):
+    total += i**2   
+
+print(total)
+10. Write a program that accepts a number from the user and prints whether it is a Strong number (sum of  factorials of digits = number itself) using a for loop. Example: 145 => 1! + 4! + 5! = 145. 
+
+num = int(input("Enter a number: "))
+temp = num
+sum = 0
+for digit in str(num):          
+    fact = 1
+    for i in range(1, int(digit) + 1):   
+        fact *= i
+    sum += fact
+
+if sum== num:
+    print(f"{num} is a Strong number")
+else:
+    print(f"{num} is NOT a Strong number")
+
+
+While Loop Problems:
+
+11. Write a program using a while loop to find the reverse of a number and check if the reversed number is  prime. Example: Input = 73 → Reverse = 37 → Prime.
+
+num = int(input("Enter a number: "))
+original = num
+rev = 0
+
+while num > 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num //= 10
+
+print(f"Reverse of {original} = {rev}")
+is_prime = True
+if rev < 2:
+    is_prime = False
+else:
+    for i in range(2, int(rev**0.5) + 1):
+        if rev % i == 0:
+            is_prime = False
+            break
+
+if is_prime:
+    print(f"{rev} is Prime")
+else:
+    print(f"{rev} is NOT Prime")
+
+12. Write a program that continues to accept numbers from the user until the sum of digits of all numbers  entered becomes greater than 100.
+def digitsum(n):
+    s = 0
+    for d in str(n):     
+        s += int(d)
+    return s
+
+total = 0
+
+while total <= 100:
+    num = int(input("Enter a number: "))
+    total += digitsum(num)
+    print(f"Current digit sum total = {total}")
+
+print("Stopped! The sum of digits exceeded 100.")
+13. Write a program using a while loop to check whether a number is a Duck number (a number containing zero  but not starting with zero, e.g., 202, 1203).
+
+num = input("Enter a number: ")
+
+if num[0] == "0":
+    print(f"{num} is NOT a Duck number (starts with 0)")
+else:
+    i = 0
+    has_zero = False
+    while i < len(num):
+        if num[i] == "0":
+            has_zero = True
+            break
+        i += 1
+    
+    if has_zero:
+        print(f"{num} is a Duck number")
+    else:
+        print(f"{num} is NOT a Duck number (no zero found)")
+14. Write a program using a while loop to accept a number and check if it is a Happy number. (A number is  happy if repeatedly replacing it with the sum of squares of its digits eventually reaches 1). Example: 19 is a  happy number.
+
+def sum_of_squares(n):
+    total = 0
+    while n > 0:
+        digit = n % 10
+        total += digit * digit
+        n //= 10
+    return total
+
+num = int(input("Enter a number: "))
+visited = set()   # to detect cycles
+
+while num != 1 and num not in visited:
+    visited.add(num)
+    num = sum_of_squares(num)
+
+if num == 1:
+    print("It is a Happy number")
+else:
+    print("It is NOT a Happy number")
+15. Write a program using a while loop to find the largest prime factor of a given number
+
+n = int(input("Enter a number: "))
+num = n
+largest = -1
+while num % 2 == 0:
+    largest = 2
+    num //= 2
+
+factor = 3
+while factor * factor <= num:
+    while num % factor == 0:
+        largest = factor
+        num //= factor
+    factor += 2   
+if num > 2:
+    largest = num
+
+print(f"Largest prime factor of {n} = {largest}")
+
+16.  Write a program to repeatedly accept a string from the user until the string entered is a palindrome. 
+
+s = input("Enter a string: ")
+
+is_palindrome = True
+i, j = 0, len(s) - 1
+
+while i < j:   
+    if s[i] != s[j]:
+        is_palindrome = False
+        break
+    i += 1
+    j -= 1
+
+if is_palindrome:
+    print(f"'{s}' is a palindrome")
+else:
+    print(f"'{s}' is NOT a palindrome")
+
+17.  Write a program using a while loop to compute the sum of digits of a number until the result becomes a  single-digit number (Digital root). Example: 9875 => 9+8+7+5=29 => 2+9=11 => 1+1=2. 
+
+x = int(input("Enter a number: "))
+
+while x >= 10:       
+    sumdigits = 0
+    temp = x
+
+    while temp > 0:    
+        sumdigits += temp % 10
+        temp //= 10
+
+    x = sumdigits   
+
+print(x)
+18.  Write a program using a while loop to generate the Collatz sequence for a given number. (Rule: If n is even  => n/2, if odd => 3n+1. Continue until n=1).
+
+n = int(input("Enter a number: "))
+
+print("Collatz sequence:", end=" ")
+
+while n != 1:
+    print(n, end=" ")
+    if n % 2 == 0:    
+        n = n // 2
+    else:             
+        n = 3 * n + 1
+
+print(1)
+
+19. Write a program using a while loop to accept a number and check whether it is a Kaprekar number.  (Kaprekar number: if square of the number can be split into two parts whose sum equals the number.  Example: 45²=2025 => 20+25=45).
+
+num = int(input("Enter a number: "))
+sq = num * num   
+
+digits = 0
+temp = num
+while temp > 0:
+    digits += 1
+    temp //= 10
+
+divisor = 10 ** digits
+right = sq % divisors
+left = sq // divisor
+
+if left + right == num:
+    print(f"{num} is a Kaprekar number")
+else:
+    print(f"{num} is NOT a Kaprekar number")
+
+20. Write a program to simulate an ATM machine using a while loop where a user can: 
+
+
+• Check balance • Deposit money
+• Withdraw money (only if balance is sufficient) • Exit 
+Continue until the user chooses to exit. 
+
+x=int(input("Enter the number"))
+balance = 0   
+
+while True:
+    print("\n==== ATM Menu ====")
+    print("1. Check Balance")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        print(f"Your balance is: ₹{balance}")
+
+    elif choice == 2:
+        amount = int(input("Enter amount to deposit: "))
+        if amount > 0:
+            balance += amount
+            print(f"₹{amount} deposited successfully!")
+        else:
+            print("Invalid amount!")
+
+    elif choice == 3:
+        amount = int(input("Enter amount to withdraw: "))
+        if amount > balance:
+            print("Insufficient balance!")
+        elif amount <= 0:
+            print("Invalid amount!")
+        else:
+            balance -= amount
+            print(f"₹{amount} withdrawn successfully!")
+
+    elif choice == 4:
+        print("Thank you for using the ATM. Goodbye!")
+        break
+
+    else:
+        print(" Invalid choice. Please try again.")
+
+
+
+
+
+
+
+
+
+
+
+
+Name:Vishal kumar
+Enrollment :0103CS231464
+Batch:6
+Timing:12:10
+Basic if-Else problems
+1. Write a program to check whether a number is positive, negative, or zero.
+X=float(input("Enter a number: "))
+If x>0:
+     Print("Positive")
+elif x<0:
+    Print("Negative")
+else:
+    Print(“number is Zero.”)
+2. Write a program to check whether a number is even or odd.
+x=int(input("Enter a number"))
+if x%2==0:
+    print("Even")
+else:
+    print("odd")
+3. Write a program to check if a given year is a leap year or not.
+year = int(input("Enter a year: "))
+if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+    print( " Leap Year")
+else:
+    print( " Not a Leap Year")
+4. Write a program to find the greatest of two numbers.
+x=float(input("Enter a number"))
+y=float(input("Enter a number"))
+if x>y:
+  print ("x is greatest")
+else:
+  print("y is greatest")
+5. Write a program to check whether a person is eligible to vote (age >= 18).
+x=int(input("Enter a number"))
+if x>=18:
+  print("yes eligible")
+else:
+  print("not eligible")
+6. Write a program to check whether a given character is a vowel or consonant. p=(input("Enter a character"))
+if p.lower() in ['a', 'e', 'i', 'o', 'u']:
+    print("Vowel")
+else:
+    print("Consonant")
+7.write a program to check if a number is divisible by 5.
+x=int(input("Enter a number"))
+if x%5==0:
+  print("yes")
+else:
+  print("not divisibe by 5")
+8. Write a program to determine whether a given number is a single-digit, two-digit, or more than two-digit  number.
+num = int(input("Enter a number: "))
+if -9 <= num <= 9:
+    print("Single-digit number")
+elif -99 <= num <= 99:
+    print("Two-digit number")
+else:
+    print("More than two-digit number")
+9.  Write a program to check whether a student has passed or failed (passing marks = 40).
+marks = float(input("Enter the student's marks: "))
+    if marks >= 40:
+        print(" Pass")
+    else:
+        print(" Fail")
+10. Write a program to find whether the entered number is a multiple of both 3 and 7.
+x=int(input("Enter a number"))
+if x%3==0 and x%7==0:
+  print("yes")
+else:
+  print("No")
+
+Ladder If & Nested If:
+1.  Write a program to find the greatest among three numbers.
+x=int(input("enter first number"))
+y=int(input("enter second number"))
+z=int(input("enter third number"))
+if x>y and x>z:
+  print("x is greatest")
+elif(y>x and y>z):
+  print("y is greatest")
+else:
+  print("z is greatest")
+2.  Write a program to classify a person based on age: Child (<13), Teenager (13-19), Adult (20-59), Senior (60+).
+age=int(input("Enter age"))
+if age<13:
+  print("child")
+elif age>=13 and age<=19:
+  print("Teenager")
+elif age>19 and age<60:
+  print("Adult")
+else:
+  print("Senior")
+3. Write a program to assign grades based on marks: 
+90-100: A,  
+75-89: B,  
+
+
+50-74: C,  35-49: D,  <35: Fail.
+marks=int(input("enter the number"))
+ if marks>=90:
+  Print("A")
+elif marks>=75 and marks<90:
+  print("B")
+elif marks>=50 and marks<75:
+  print("C")
+elif marks>=35 and marks<50:
+  print("D")
+else:
+  print("fail")
+4. Write a program to check the type of triangle (equilateral, isosceles, or scalene) based on sides. 
+side1 = float(input("Enter the length of the first side: "))
+side2 = float(input("Enter the length of the second side: "))
+side3 = float(input("Enter the length of the third side: "))
+
+if side1 == side2 and side2 == side3:
+    print("Equilateral triangle.")
+elif side1 == side2 or side1 == side3 or side2 == side3:
+    print("Isosceles triangle.")
+else:
+    print("Scalene triangle.")    
+5. Write a program to check if a character is uppercase, lowercase, digit, or special symbol. 
+ch = input("Enter a character: ")
+
+if len(ch) != 1:
+    print("Please enter only one character!")
+else:
+    if ch.isupper():
+        print("Uppercase Letter")
+    elif ch.islower():
+        print("Lowercase Letter")
+    elif ch.isdigit():
+        print("Digit")
+    else:
+        print("Special Symbol")
+6. Write a program to calculate electricity bill based on units: 
+Up to 100 units: ₹5 per unit, 
+101–200 units: ₹7 per unit, 
+Above 200 units: ₹10 per unit. 
+
+units = int(input("Enter the number of units consumed: "))
+
+if units <= 100:
+    bill = units * 5
+elif units <= 200:
+    bill = (100 * 5) + (units - 100) * 7
+else:
+    bill = (100 * 5) + (100 * 7) + (units - 200) * 10
+
+print( bill)
+
+7. Write a program to determine the largest of four numbers using nested if.
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+d = int(input("Enter fourth number: "))
+
+if a > b:
+    if a > c:
+        if a > d:
+            largest = a
+        else:
+            largest = d
+    else:
+        if c > d:
+            largest = c
+        else:
+            largest = d
+else:
+    if b > c:
+        if b > d:
+            largest = b
+        else:
+            largest = d
+    else:
+        if c > d:
+            largest = c
+        else:
+            largest = d
+print(largest)
+
+8.  Write a program to check if a given year is a century year and also a leap year.
+
+year = int(input("Enter a year: "))
+if year % 100 == 0:
+    print("is a Century Year.")
+else:
+    print( "is NOT a Century Year.")
+
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print(year, "is a Leap Year.")
+else:
+    print( "is NOT a Leap Year.")
+9. Write a program to classify BMI value: Underweight (<18.5), Normal (18.5-24.9), Overweight (25-29.9),  Obese (30+).
+
+bmi = float(input("Enter your BMI value: "))
+
+if bmi < 18.5:
+    print( "Underweight")
+elif bmi >= 18.5 and bmi <= 24.9:
+    print(" Normal weight")
+elif bmi >= 25 and bmi <= 29.9:
+    print("Overweight")
+else:
+    print("Obese")
+10. Write a program to display the smallest number among three using nested if.
+
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+
+if a < b:
+    if a < c:
+        smallest = a
+    else:
+        smallest = c
+else:
+    if b < c:
+        smallest = b
+    else:
+        smallest = c
+
+print( smallest)
+
+For Loop Problems:
+1. Write a program using a for loop to print all Armstrong numbers between 100 and 999. (Armstrong number:  sum of cubes of digits equals the number itself. Example: 153 => 1³+5³+3³ = 153).
+
+for x in range(100, 1000):
+    d1 = x // 100          # hundreds place
+    d2 = (x // 10) % 10    # tens place
+    d3 = x % 10            # ones place
+    sum_of_cubes = d1**3 + d2**3 + d3**3
+
+    if x == sum_of_cubes:
+        print(x)
+2.  Write a program to generate and display the first n prime numbers using a for loop.
+
+n = int(input("Enter how many prime numbers you want: "))
+
+count = 0        
+num = 2          
+
+print(f"The first {n} prime numbers are:")
+
+while count < n:   
+    is_prime = True
+    
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    
+    if is_prime:
+        print(num, end=" ")
+        count += 1
+    
+    num += 1
+3.  Write a program to display all numbers from 1 to 500 that are divisible by 3, but the sum of their digits  should not exceed 10.
+
+def digit_sum(n):
+    s = 0
+    while n > 0:
+        s += n % 10
+        n //= 10
+    return s
+
+for num in range(1, 501):
+    if num % 3 == 0:               
+        if digit_sum(num) <= 10:   
+            print(num, end=" ")
+4. Write a program using a for loop to print a pyramid of stars (*) of height n. Example for n=4:  * 
+ *** 
+***** 
+******* 
+
+n = int(input("Enter the height of the pyramid: "))
+
+for i in range(1, n + 1):
+    print(" " * (n - i), end="")
+    print("*" * (2 * i - 1))
+5. Write a program to accept a string and check whether it is a pangram (contains all 26 alphabets at least once)  using a for loop.
+
+
+s = input("Enter a string: ").lower()   
+alphabets = "abcdefghijklmnopqrstuvwxyz"
+found = True
+
+for ch in alphabets:
+    if ch not in s:
+        found = False
+        break
+
+if found:
+    print("The string is a pangram")
+else:
+    print(" The string is NOT a pangram")
+6.  Write a program using a for loop to print all twin primes between 1 and 100. (Twin primes: pairs of prime  numbers with a difference of 2, e.g., (3,5), (11,13)).
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+print("Twin primes between 1 and 100:")
+
+for i in range(2, 100):
+    if is_prime(i) and is_prime(i + 2):
+        print(f"({i}, {i+2})")
+7. Write a program that accepts a number from the user and prints whether it is a Harshad number (number  divisible by the sum of its digits) using a for loop.
+
+num = int(input("Enter a number: "))
+sum= 0
+for digit in str(num):     
+    sum+= int(digit)
+
+if num % sum == 0:
+    print(f"{num} is a Harshad number")
+else:
+    print(f"{num} is NOT a Harshad number")
+8. Write a program to generate Pascal’s Triangle up to n rows using a for loop.
+
+n = int(input("Enter number of rows: "))
+
+for i in range(n):  # loop over each row
+    print(" " * (n - i), end="")
+
+    value = 1
+    for j in range(i + 1):  # j goes from 0 to i
+        print(value, end=" ")
+        value = value * (i - j) // (j + 1)
+
+    print()
+9. Write a program using a for loop to display the sum of the series: 
+1² + 2² + 3² + ... + n² 
+
+n = int(input("Enter n: "))
+
+total = 0
+for i in range(1, n + 1):
+    total += i**2   
+
+print(total)
+10. Write a program that accepts a number from the user and prints whether it is a Strong number (sum of  factorials of digits = number itself) using a for loop. Example: 145 => 1! + 4! + 5! = 145. 
+
+num = int(input("Enter a number: "))
+temp = num
+sum = 0
+for digit in str(num):          
+    fact = 1
+    for i in range(1, int(digit) + 1):   
+        fact *= i
+    sum += fact
+
+if sum== num:
+    print(f"{num} is a Strong number")
+else:
+    print(f"{num} is NOT a Strong number")
+
+
+While Loop Problems:
+
+11. Write a program using a while loop to find the reverse of a number and check if the reversed number is  prime. Example: Input = 73 → Reverse = 37 → Prime.
+
+num = int(input("Enter a number: "))
+original = num
+rev = 0
+
+while num > 0:
+    digit = num % 10
+    rev = rev * 10 + digit
+    num //= 10
+
+print(f"Reverse of {original} = {rev}")
+is_prime = True
+if rev < 2:
+    is_prime = False
+else:
+    for i in range(2, int(rev**0.5) + 1):
+        if rev % i == 0:
+            is_prime = False
+            break
+
+if is_prime:
+    print(f"{rev} is Prime")
+else:
+    print(f"{rev} is NOT Prime")
+
+12. Write a program that continues to accept numbers from the user until the sum of digits of all numbers  entered becomes greater than 100.
+def digitsum(n):
+    s = 0
+    for d in str(n):     
+        s += int(d)
+    return s
+
+total = 0
+
+while total <= 100:
+    num = int(input("Enter a number: "))
+    total += digitsum(num)
+    print(f"Current digit sum total = {total}")
+
+print("Stopped! The sum of digits exceeded 100.")
+13. Write a program using a while loop to check whether a number is a Duck number (a number containing zero  but not starting with zero, e.g., 202, 1203).
+
+num = input("Enter a number: ")
+
+if num[0] == "0":
+    print(f"{num} is NOT a Duck number (starts with 0)")
+else:
+    i = 0
+    has_zero = False
+    while i < len(num):
+        if num[i] == "0":
+            has_zero = True
+            break
+        i += 1
+    
+    if has_zero:
+        print(f"{num} is a Duck number")
+    else:
+        print(f"{num} is NOT a Duck number (no zero found)")
+14. Write a program using a while loop to accept a number and check if it is a Happy number. (A number is  happy if repeatedly replacing it with the sum of squares of its digits eventually reaches 1). Example: 19 is a  happy number.
+
+def sum_of_squares(n):
+    total = 0
+    while n > 0:
+        digit = n % 10
+        total += digit * digit
+        n //= 10
+    return total
+
+num = int(input("Enter a number: "))
+visited = set()   # to detect cycles
+
+while num != 1 and num not in visited:
+    visited.add(num)
+    num = sum_of_squares(num)
+
+if num == 1:
+    print("It is a Happy number")
+else:
+    print("It is NOT a Happy number")
+15. Write a program using a while loop to find the largest prime factor of a given number
+
+n = int(input("Enter a number: "))
+num = n
+largest = -1
+while num % 2 == 0:
+    largest = 2
+    num //= 2
+
+factor = 3
+while factor * factor <= num:
+    while num % factor == 0:
+        largest = factor
+        num //= factor
+    factor += 2   
+if num > 2:
+    largest = num
+
+print(f"Largest prime factor of {n} = {largest}")
+
+16.  Write a program to repeatedly accept a string from the user until the string entered is a palindrome. 
+
+s = input("Enter a string: ")
+
+is_palindrome = True
+i, j = 0, len(s) - 1
+
+while i < j:   
+    if s[i] != s[j]:
+        is_palindrome = False
+        break
+    i += 1
+    j -= 1
+
+if is_palindrome:
+    print(f"'{s}' is a palindrome")
+else:
+    print(f"'{s}' is NOT a palindrome")
+
+17.  Write a program using a while loop to compute the sum of digits of a number until the result becomes a  single-digit number (Digital root). Example: 9875 => 9+8+7+5=29 => 2+9=11 => 1+1=2. 
+
+x = int(input("Enter a number: "))
+
+while x >= 10:       
+    sumdigits = 0
+    temp = x
+
+    while temp > 0:    
+        sumdigits += temp % 10
+        temp //= 10
+
+    x = sumdigits   
+
+print(x)
+18.  Write a program using a while loop to generate the Collatz sequence for a given number. (Rule: If n is even  => n/2, if odd => 3n+1. Continue until n=1).
+
+n = int(input("Enter a number: "))
+
+print("Collatz sequence:", end=" ")
+
+while n != 1:
+    print(n, end=" ")
+    if n % 2 == 0:    
+        n = n // 2
+    else:             
+        n = 3 * n + 1
+
+print(1)
+
+19. Write a program using a while loop to accept a number and check whether it is a Kaprekar number.  (Kaprekar number: if square of the number can be split into two parts whose sum equals the number.  Example: 45²=2025 => 20+25=45).
+
+num = int(input("Enter a number: "))
+sq = num * num   
+
+digits = 0
+temp = num
+while temp > 0:
+    digits += 1
+    temp //= 10
+
+divisor = 10 ** digits
+right = sq % divisors
+left = sq // divisor
+
+if left + right == num:
+    print(f"{num} is a Kaprekar number")
+else:
+    print(f"{num} is NOT a Kaprekar number")
+
+20. Write a program to simulate an ATM machine using a while loop where a user can: 
+
+
+• Check balance • Deposit money
+• Withdraw money (only if balance is sufficient) • Exit 
+Continue until the user chooses to exit. 
+
+x=int(input("Enter the number"))
+balance = 0   
+
+while True:
+    print("\n==== ATM Menu ====")
+    print("1. Check Balance")
+    print("2. Deposit Money")
+    print("3. Withdraw Money")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        print(f"Your balance is: ₹{balance}")
+
+    elif choice == 2:
+        amount = int(input("Enter amount to deposit: "))
+        if amount > 0:
+            balance += amount
+            print(f"₹{amount} deposited successfully!")
+        else:
+            print("Invalid amount!")
+
+    elif choice == 3:
+        amount = int(input("Enter amount to withdraw: "))
+        if amount > balance:
+            print("Insufficient balance!")
+        elif amount <= 0:
+            print("Invalid amount!")
+        else:
+            balance -= amount
+            print(f"₹{amount} withdrawn successfully!")
+
+    elif choice == 4:
+        print("Thank you for using the ATM. Goodbye!")
+        break
+
+    else:
+        print(" Invalid choice. Please try again.")
