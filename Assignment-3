@@ -1,0 +1,247 @@
+Name: Nishita Patidar
+Enrollment No:0103CS231266
+Batch no :6
+
+import random
+import os 
+import datetime
+
+
+students = {}
+
+
+def logout():
+    
+score = 0
+
+
+def load_questions(filename):
+    questions = []
+    file_path = os.path.join(os.path.dirname(os.path.abspath(_file_)), "questions.txt")
+
+    with open(file_path, "r") as f:
+        for line in f:
+            parts = line.strip().split("|")
+            if len(parts) == 6:
+                q, a, b, c, d, correct = parts
+                questions.append({
+                    "question": q,
+                    "options": {"A": a, "B": b, "C": c, "D": d},
+                    "answer": correct.upper()
+                })
+    return questions
+
+def quiz(t,f):
+
+        print(f" Welcome to the {t} Quiz!")
+        filename = "questions.txt"
+        questions = load_questions(filename)
+
+       
+        d_questions = random.sample(questions, 10)
+        score = 0
+
+        for i, q in enumerate(d_questions, 1):
+            print(f"Q{i}: {q['question']}")
+            for key, value in q["options"].items():
+                print(f"   {key}. {value}")
+
+            while True:
+                user_answer = input("Enter your answer (A/B/C/D): ").upper()
+                if user_answer in ["A", "B", "C", "D"]:
+                    break
+                else:
+                    print("Invalid input. Please enter A, B, C, or D.")
+
+                if user_answer == q["answer"]:
+                    print("Correct")
+                score += 1
+            else :
+                print(f" Wrong! Correct answer was: {q['answer']}")
+
+     
+        now = datetime.datetime.now()
+        print(now)
+        print(" Quiz Completed")
+        print(f"Your final score: {score}/10")
+        print(f"Date & Time: {now}")
+
+
+def register():
+    print("Student Registration")
+    username = input("Choose a username: ")
+    if username in students:
+        print("Username already exists. Try another one.")
+        return
+
+    password = input("Create a password: ")
+    first_name = input("First name: ")
+    last_name = input("Last name: ")
+    email = input("Email: ")
+    phone = input("Phone: ")
+    dob = input("Date of Birth (YYYY-MM-DD): ")
+    address = input("Address: ")
+    city = input("City: ")
+    state = input("State: ")
+    course = input("Course: ")
+    students[username] = {
+        "password": password,
+        "first_name": first_name,
+        "last_name": last_name,
+        "email": email,
+        "phone": phone,
+        "dob": dob,
+        "address": address,
+        "city": city,
+        "state": state,
+        "course": course
+    }
+    print(f"Registration successful for {first_name} {last_name}")
+admin_password = "anthony!@"
+def login():
+    inp=input("who are u admin or user?")
+    if inp == "admin":
+        ad_password = input("enter admin password:")
+        if ad_password == admin_password:
+            print("welcome admin")
+    else:
+        username = input("Enter your username: ")
+
+        if username not in students:
+            print("No such user found. Please register first.")
+            return
+
+        password = input("Enter your password: ")
+
+        if students[username]["password"] != password:
+            print("Incorrect password. Please try again.\n")
+        return
+
+    print(
+        f"Welcome, {students[username]['first_name']} {students[username]['last_name']}! You are now logged in.\n")
+
+
+def show_profile():
+    username = input("Enter your username: ")
+    if username not in students:
+        print("No such user found.")
+        return
+    password = input("Enter your password: ")
+    if students[username]["password"] != password:
+        print("Incorrect password.")
+        return
+    user = students[username]
+    print(f" Profile of {user['first_name']} {user['last_name']} ")
+    print(f"Email: {user['email']}")
+    print(f"Phone: {user['phone']}")
+    print(f"Date of Birth: {user['dob']}")
+    print(f"Address: {user['address']}")
+    print(f"City: {user['city']}")
+    print(f"State: {user['state']}")
+    print(f"Course: {user['course']}")
+
+def update_profile():
+    username = input("Enter your username: ")
+    if username not in students:
+        print("No such user found.")
+        return
+    password = input("Enter your password: ")
+    if students[username]["password"] != password:
+        print("Incorrect password.")
+        return
+    user = students[username]
+    print("Which field do you want to update?")
+    print("1. First Name")
+    print("2. Last Name")
+    print("3. Email")
+    print("4. Phone")
+    print("5. Date of Birth")
+    print("6. Address")
+    print("7. City")
+    print("8. State")
+    print("9. Course")
+    print("10. Password")
+    choice = input("Enter option number: ")
+
+    if choice == '1':
+        user["first_name"] = input("New First Name: ")
+    elif choice == '2':
+        user["last_name"] = input("New Last Name: ")
+    elif choice == '3':
+        user["email"] = input("New Email: ")
+    elif choice == '4':
+        user["phone"] = input("New Phone: ")
+    elif choice == '5':
+        user["dob"] = input("New Date of Birth (YYYY-MM-DD): ")
+    elif choice == '6':
+        user["address"] = input("New Address: ")
+    elif choice == '7':
+        user["city"] = input("New City: ")
+    elif choice == '8':
+        user["state"] = input("New State: ")
+    elif choice == '9':
+        user["course"] = input("New Course: ")
+    elif choice == '10':
+        user["password"] = input("New Password: ")
+    else:
+        print("Invalid option.")
+        return
+
+    print("Profile updated successfully.")
+
+
+def close():
+    exit()
+
+
+def main():
+    print("Welcome in LNCT")
+    response = input('''
+        Choose option:
+        1. Registration
+        2. Login
+        3. Profile
+        4. Update profile
+        5. Logout
+        6. Main Menu
+        7. Exit
+        8. take quiz
+            select option 1/2/3/4/5/6/7: ''')
+
+    if response == '1':
+        register()
+    elif response == '2':
+        login()
+
+    elif response == '3':
+        show_profile()
+    elif response == '4':
+        update_profile()
+    elif response == '5':
+        logout()
+    elif response == '6':
+        main()
+    elif response == '7':
+
+        close()
+    elif response == '8':
+
+
+
+        choice = input("Choose your quiz (1 for python or 2 for dbms): ").strip()
+
+        if choice == "1":
+            quiz("Python", "questions.txt")
+        elif choice == "2":
+            quiz("DBMS", "dbms.txt")
+        else:
+            print(" Invalid choice. Exiting.")
+
+
+
+    else:
+        print("Invalid Choice, Please select correct option")
+        main()
+
+
+main()
